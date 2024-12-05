@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar navigation menu -->
+    <div class="sidebar">
+        <!-- Links to different sections of the application -->
+        <a href="#dashboard">Dashboard</a> 
+        <a href="#workouts">Workouts</a> 
+        <a href="#progress">Progress</a> 
+        <a href="#settings">Settings</a> 
+    </div>
 
+    <!-- Main content area -->
+    <div class="content">
+        <!-- Header section -->
+        <div class="header">
+            <h1>Workout Planner</h1>
+            <div>
+                <!-- Navigation buttons for the calendar -->
+                <button onclick="prevMonth()">&#8249; Prev</button> <!-- Button to navigate to the previous month -->
+                <span id="month-year"></span> <!-- Placeholder for displaying the current month and year -->
+                <button onclick="nextMonth()">Next &#8250;</button> <!-- Button to navigate to the next month -->
+            </div>
+        </div>
+
+        <!-- Calendar section -->
+        <div class="weekly-calendar" id="calendar">
+            <!-- Placeholder for rendering the days of the week and calendar dates dynamically -->
+        </div>
+
+        <!-- Exercise details section -->
+        <div class="exercise-details">
+            <div>Exercise Details and Editing</div>
+            <button id="add-exercise">Add Exercise</button> <!-- Button for adding a new exercise -->
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file for functionality -->
+    <script src="index.js"></script>
+</body>
+</html>
