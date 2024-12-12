@@ -24,9 +24,9 @@
             <h1>Workout Planner</h1>
             <div>
                 <!-- Navigation buttons for the calendar -->
-                <button onclick="prevMonth()">&#8249; Prev</button> <!-- Button to navigate to the previous month -->
+                <button onclick="prevMonth()" aria-label="Previous Month">&#8249; Prev</button> <!-- Button to navigate to the previous month -->
                 <span id="month-year"></span> <!-- Placeholder for displaying the current month and year -->
-                <button onclick="nextMonth()">Next &#8250;</button> <!-- Button to navigate to the next month -->
+                <button onclick="nextMonth()" aria-label="Next Month">Next &#8250;</button> <!-- Button to navigate to the next month -->
             </div>
         </div>
 
@@ -38,7 +38,24 @@
         <!-- Exercise details section -->
         <div class="exercise-details">
             <div>Exercise Details and Editing</div>
-            <button id="add-exercise">Add Exercise</button> <!-- Button for adding a new exercise -->
+            <button id="add-exercise" aria-label="Add New Exercise">Add Exercise</button> <!-- Button for adding a new exercise -->
+        </div>
+    </div>
+    
+    <!-- Modal for selecting exercises -->
+    <div id="exercise-modal" class="modal" role="dialog" aria-labelledby="exercise-modal-label" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" aria-label="Close Modal">&times;</span>
+            <h2 id="exercise-modal-label">Add an Exercise</h2>
+            <label for="exercise-day">Select a Day:</label>
+            <select id="exercise-day" aria-label="Select Day for Exercise">
+                <!-- Days will be dynamically populated -->
+            </select>
+            <h3>Select an Exercise</h3>
+            <ul id="exercise-list">
+                <!-- Exercise options will be dynamically added here -->
+            </ul>
+            <button id="add-selected-exercise" aria-label="Add Selected Exercise">Add to Calendar</button>
         </div>
     </div>
 
