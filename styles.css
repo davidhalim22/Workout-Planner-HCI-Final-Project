@@ -129,3 +129,107 @@ body
 {
     background-color: #0056b3;
 }
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 50%;
+    border-radius: 8px;
+}
+
+/* Close button */
+.modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal .close:hover {
+    color: #000;
+}
+
+/* Exercise list */
+#exercise-list {
+    list-style: none;
+    padding: 0;
+}
+
+#exercise-list li {
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+#exercise-list li:hover {
+    background-color: #d9f7be;
+}
+
+/* Add exercise button */
+#add-selected-exercise {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#add-selected-exercise:hover {
+    background-color: #0056b3;
+}
+
+#exercise-day {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+.exercise-entry {
+    margin-top: 5px;
+    padding: 3px;
+    background-color: #d9f7be;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #333;
+}
+
+.exercise-entry.highlight {
+    animation: highlightEffect 1s ease-in-out;
+}
+
+@keyframes highlightEffect {
+    0% {
+        background-color: #ffeb3b;
+    }
+    100% {
+        background-color: #d9f7be;
+    }
+}
