@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Specifies the character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Sets the viewport for responsive web design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the title of the web page -->
+    <title>Flash</title>
+    
+    <!-- Links to the external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar navigation menu -->
+    <div class="sidebar">
+        <!-- Links to different sections of the application -->
+        <a href="#dashboard">Dashboard</a> <!-- Navigation link to the dashboard section -->
+        <a href="#workouts">Workouts</a> <!-- Navigation link to the workouts section -->
+        <a href="#progress">Progress</a> <!-- Navigation link to the progress section -->
+        <a href="#settings">Settings</a> <!-- Navigation link to the settings section -->
+    </div>
+
+    <!-- Main content area -->
+    <div class="content">
+        <!-- Header section -->
+        <div class="header">
+            <h1>Workout Planner</h1> <!-- Displays the title of the application -->
+            <div>
+                <!-- Navigation buttons for the calendar -->
+                <button onclick="prevMonth()" aria-label="Previous Month">&#8249; Prev</button> <!-- Button to navigate to the previous month -->
+                <span id="month-year"></span> <!-- Placeholder for displaying the current month and year -->
+                <button onclick="nextMonth()" aria-label="Next Month">Next &#8250;</button> <!-- Button to navigate to the next month -->
+            </div>
+        </div>
+
+        <!-- Calendar section -->
+        <div class="weekly-calendar" id="calendar">
+            <!-- Placeholder for rendering the days of the week and calendar dates dynamically -->
+        </div>
+
+        <!-- Exercise details section -->
+        <div class="exercise-details">
+            <div>Exercise Details and Editing</div> <!-- Section header for exercise details -->
+            <button id="add-exercise" aria-label="Add New Exercise">Add Exercise</button> <!-- Button for adding a new exercise -->
+        </div>
+    </div>
+    
+    <!-- Modal for selecting exercises -->
+    <div id="exercise-modal" class="modal" role="dialog" aria-labelledby="exercise-modal-label" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" aria-label="Close Modal">&times;</span> <!-- Button to close the modal -->
+            <h2 id="exercise-modal-label">Add an Exercise</h2> <!-- Modal header for adding an exercise -->
+            <label for="exercise-day">Select a Day:</label> <!-- Label for the day selection dropdown -->
+            <select id="exercise-day" aria-label="Select Day for Exercise">
+                <!-- Days will be dynamically populated -->
+            </select>
+            <h3>Select an Exercise</h3> <!-- Header for the exercise selection section -->
+            <ul id="exercise-list">
+                <!-- Exercise options will be dynamically added here -->
+            </ul>
+            <button id="add-selected-exercise" aria-label="Add Selected Exercise">Add to Calendar</button> <!-- Button to add the selected exercise to the calendar -->
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file for functionality -->
+    <script src="index.js"></script>
+</body>
+</html>

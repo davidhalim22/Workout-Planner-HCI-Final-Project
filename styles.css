@@ -1,0 +1,230 @@
+/* Reset margins, padding, and set box-sizing for all elements */
+* {
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+}
+
+/* Styling for the body of the page */
+body {
+    font-family: Arial, sans-serif; /* Sets font for the entire page */
+    display: flex; /* Enables flexbox layout for the body */
+    height: 100vh; /* Sets body height to the full viewport height */
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Style for the sidebar */
+.sidebar {
+    width: 10%; /* Sidebar takes up 10% of the page width */
+    background-color: #f0f0f0; /* Sets light gray background color */
+    padding: 20px; /* Adds padding inside the sidebar */
+}
+
+/* Style for links inside the sidebar */
+.sidebar a {
+    display: block; /* Makes links appear as block elements */
+    margin: 10px 0; /* Adds vertical space between links */
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets link text color to dark gray */
+    font-weight: bold; /* Makes link text bold */
+}
+
+/* Style for the header section */
+.header {
+    width: 100%; /* Makes the header span the full width */
+    background-color: #cce7f0; /* Light blue background */
+    padding: 10px 20px; /* Adds padding inside the header */
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Spaces items to the edges */
+    align-items: center; /* Centers items vertically */
+}
+
+/* Style for buttons in the header */
+.header button {
+    background-color: #007bff; /* Sets button background to blue */
+    color: white; /* Makes text color white */
+    border: none; /* Removes border */
+    padding: 5px 10px; /* Adds padding around the button text */
+    border-radius: 3px; /* Rounds button corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Style for the main content area */
+.content {
+    display: flex; /* Enables flexbox for content */
+    flex-direction: column; /* Stacks items vertically */
+    flex-grow: 1; /* Allows content to expand and fill available space */
+}
+
+/* Ensures header, calendar, and exercise details take full width */
+.header, .weekly-calendar, .exercise-details {
+    width: 100%; /* Ensures these elements span the full width */
+}
+
+/* Style for the weekly calendar */
+.weekly-calendar {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(7, 1fr); /* Creates 7 equal columns for days of the week */
+    grid-auto-rows: minmax(100px, 1fr); /* Sets minimum and maximum row heights */
+    gap: 2px; /* Adds spacing between grid cells */
+    border: 1px solid #ccc; /* Adds a border around the calendar */
+    flex-grow: 1; /* Allows the calendar to expand in the container */
+}
+
+/* Style for individual day cells in the calendar */
+.weekly-calendar .day {
+    position: relative; /* Allows positioning of child elements */
+    border: 1px solid #ddd; /* Adds a light gray border */
+    padding: 10px; /* Adds padding inside each day cell */
+    background-color: #f9f9f9; /* Sets a light background color */
+}
+
+/* Hover effect for day cells */
+.weekly-calendar .day:hover {
+    background-color: #e6f7ff; /* Changes background color on hover */
+}
+
+/* Style for day names */
+.day-name {
+    font-weight: bold; /* Makes text bold */
+    text-align: center; /* Centers text horizontally */
+    background-color: #eef; /* Light blue background */
+    padding: 5px 0; /* Adds vertical padding */
+    height: 30px; /* Sets fixed height */
+    line-height: 30px; /* Vertically centers text */
+}
+
+/* Style for the exercise details section */
+.exercise-details {
+    height: 25%; /* Takes up 25% of the container height */
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 20px; /* Adds padding inside */
+    border-top: 1px solid #ccc; /* Adds a border at the top */
+}
+
+/* Style for the button in the exercise details section */
+.exercise-details button {
+    margin-top: 10px; /* Adds space above the button */
+    padding: 10px 15px; /* Adds padding inside the button */
+    background-color: #007bff; /* Sets button background to blue */
+    color: white; /* Makes text color white */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds button corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 14px; /* Sets font size */
+}
+
+/* Hover effect for the button */
+.exercise-details button:hover {
+    background-color: #0056b3; /* Darkens the button on hover */
+}
+
+/* Modal overlay style */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Sticks the modal to the viewport */
+    z-index: 1000; /* Places modal above other elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* Covers full width of the viewport */
+    height: 100%; /* Covers full height of the viewport */
+    overflow: auto; /* Enables scrolling if content exceeds viewport */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
+/* Modal content style */
+.modal-content {
+    background-color: #fff; /* White background for the modal */
+    margin: 15% auto; /* Centers modal vertically and horizontally */
+    padding: 20px; /* Adds padding inside */
+    border: 1px solid #ccc; /* Light gray border */
+    width: 50%; /* Sets modal width to 50% of viewport */
+    border-radius: 8px; /* Rounds modal corners */
+}
+
+/* Close button style */
+.modal .close {
+    color: #aaa; /* Light gray color */
+    float: right; /* Aligns the button to the right */
+    font-size: 28px; /* Increases font size */
+    font-weight: bold; /* Makes text bold */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Hover effect for the close button */
+.modal .close:hover {
+    color: #000; /* Changes color to black on hover */
+}
+
+/* Style for the exercise list */
+#exercise-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes padding */
+}
+
+/* Style for individual exercise items */
+#exercise-list li {
+    margin: 10px 0; /* Adds space between items */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    padding: 5px 10px; /* Adds padding inside each item */
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 4px; /* Rounds corners */
+    transition: background-color 0.2s; /* Smooth background color transition */
+}
+
+/* Hover effect for exercise items */
+#exercise-list li:hover {
+    background-color: #d9f7be; /* Light green background on hover */
+}
+
+/* Style for the add exercise button */
+#add-selected-exercise {
+    margin-top: 10px; /* Adds space above the button */
+    padding: 10px 15px; /* Adds padding inside */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 14px; /* Sets font size */
+}
+
+/* Hover effect for the add exercise button */
+#add-selected-exercise:hover {
+    background-color: #0056b3; /* Darkens button on hover */
+}
+
+/* Dropdown for selecting exercise day */
+#exercise-day {
+    width: 100%; /* Makes dropdown span full width */
+    padding: 10px; /* Adds padding inside */
+    margin-bottom: 15px; /* Adds space below */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounds corners */
+    font-size: 14px; /* Sets font size */
+}
+
+/* Style for each exercise entry in the calendar */
+.exercise-entry {
+    margin-top: 5px; /* Adds space above entries */
+    padding: 3px; /* Adds padding inside */
+    background-color: #d9f7be; /* Light green background */
+    border-radius: 3px; /* Rounds corners */
+    font-size: 12px; /* Sets font size */
+    color: #333; /* Dark gray text color */
+}
+
+/* Highlight effect for newly added exercise entries */
+.exercise-entry.highlight {
+    animation: highlightEffect 1s ease-in-out; /* Triggers highlight animation */
+}
+
+/* Animation for the highlight effect */
+@keyframes highlightEffect {
+    0% {
+        background-color: #ffeb3b; /* Starts with bright yellow background */
+    }
+    100% {
+        background-color: #d9f7be; /* Transitions to light green background */
+    }
+}
